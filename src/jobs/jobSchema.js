@@ -1,5 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
-import db from '../../config/sequellize'
+import db from '../../config/sequellize.js'
 
 
  /**
@@ -13,11 +13,6 @@ class Job extends Model {
   static init(sequelize, DataTypes) {
     super.init(
       {
-        jobId: {
-          type: DataTypes.INTEGER(11).UNSIGNED,
-          allowNull: false,
-          primaryKey: true,
-        },
         description: {
           type: Sequelize.TEXT,
           allowNull: false
@@ -33,21 +28,13 @@ class Job extends Model {
         paymentDate:{
           type: Sequelize.DATE
         },
-        contractId:{
-          type: DataTypes.INTEGER(11).UNSIGNED,
-          allowNull: false,
-          references: {
-            model: 'Contract',
-            key: 'coontractId',
-          },
-        }
       },
       {
         sequelize,
         modelName: 'Job'
       }
     );
-    return Contract
+    return Job
   }
 }
 Job.init(db, Sequelize);

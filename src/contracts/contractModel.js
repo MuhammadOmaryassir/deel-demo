@@ -1,5 +1,5 @@
 import { Op } from 'sequelize';
-import Contract from './contractSchema'
+import Contract from './contractSchema.js'
 
 
 export default class ContractModel {

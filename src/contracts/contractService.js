@@ -1,4 +1,4 @@
-import ContractModel from "./contractModel";
+import ContractModel from "./contractModel.js";
 
 export default class ContractService {
   static async getContractById (id,userId) {
@@ -8,4 +8,4 @@ export default class ContractService {
   static async getNonTerminatedContracts (userId) {
     return ContractModel.getNonTerminatedUserContracts(userId)
   }
-}å
+}

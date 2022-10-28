@@ -1,8 +1,8 @@
-const { Op } = require('sequelize');
-import sequelize from '../../config/sequellize';
-import Job from './jobSchema'
-import Contract from '../contracts/contractSchema';
-import Profile from '../profiles/profileSchema'
+import { Op } from 'sequelize'
+import sequelize from '../../config/sequellize.js';
+import Job from './jobSchema.js'
+import Contract from '../contracts/contractSchema.js';
+import Profile from '../profiles/profileSchema.js'
 
 export default class JobModel {
 

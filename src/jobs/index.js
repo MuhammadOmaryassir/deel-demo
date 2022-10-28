@@ -1,6 +1,6 @@
 import express from 'express';
-import JobController from './jobController';
-const {getProfile} = require('../middleware/getProfile')
+import JobController from './jobController.js';
+import getProfile from '../middleware/getProfile.js'
 
 
 const router = express.Router();

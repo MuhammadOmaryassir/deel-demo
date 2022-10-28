@@ -1,9 +1,9 @@
-import sequelize from '../../config/sequellize';
-const { Op } = require('sequelize');
+import sequelize from '../../config/sequellize.js';
+import { Op } from 'sequelize';
 
-import Job from './jobSchema'
-import Contract from '../contracts/contractSchema';
-import Profile from '../profiles/profileSchema'
+import Job from '../jobs/jobSchema.js'
+import Contract from '../contracts/contractSchema.js';
+import Profile from '../profiles/profileSchema.js'
 
 export default class ProfileModel {
 
@@ -35,7 +35,7 @@ export default class ProfileModel {
         throw new error(404, 'Client not found')
       }
 
-      const unpaidSum = await getClientUnpaidJobsSum(clientId);
+      const unpaidSum = await ProfileModel.getClientUnpaidJobsSum(clientId);
       const depositThreshold = unpaidSum * thresholdAmount;
 
       if (amount > depositThreshold) {

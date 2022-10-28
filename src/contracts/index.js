@@ -1,6 +1,6 @@
 import express from 'express';
-import ContractController from './contractController';
-const {getProfile} = require('../middleware/getProfile')
+import ContractController from './contractController.js';
+import getProfile from '../middleware/getProfile.js'
 
 
 const router = express.Router();

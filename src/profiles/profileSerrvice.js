@@ -1,4 +1,4 @@
-import ProfileModel from './profileModel'
+import ProfileModel from './profileModel.js'
 
 export default class ProfileService {
   static async depositMoney(clientId, amount) {
@@ -11,10 +11,10 @@ export default class ProfileService {
   }
 
   static async getBestProfession(startDate, endDate) {
-    return ProfileModel.getBestClients(startDate, endDate)
+    return ProfileModel.getBestProfession(startDate, endDate)
   }
 
-  static async getBestClients() {
+  static async getBestClients(startDate,endDate,limit) {
     return ProfileModel.getBestClients(startDate, endDate, limit)
 
   }

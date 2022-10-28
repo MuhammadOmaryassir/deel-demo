@@ -1,5 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
-import db from '../../config/sequellize'
+import db from '../../config/sequellize.js'
 
 
  /**
@@ -13,11 +13,7 @@ class Contract extends Model {
   static init(sequelize, DataTypes) {
     super.init(
       {
-        coontractId: {
-          type: DataTypes.INTEGER(11).UNSIGNED,
-          allowNull: false,
-          primaryKey: true,
-        },
+
         terms: {
           type: Sequelize.TEXT,
           allowNull: false
@@ -25,22 +21,6 @@ class Contract extends Model {
         status:{
           type: Sequelize.ENUM('new','in_progress','terminated')
         },
-        contractorId:{
-          type: DataTypes.INTEGER(11).UNSIGNED,
-          allowNull: false,
-          references: {
-            model: 'Profile',
-            key: 'profileId',
-          },
-        },
-        clientId:{
-          type: DataTypes.INTEGER(11).UNSIGNED,
-          allowNull: false,
-          references: {
-            model: 'Profile',
-            key: 'profileId',
-          },
-        }
       },
       {
         sequelize,

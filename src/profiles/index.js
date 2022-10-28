@@ -1,6 +1,5 @@
 import express from 'express';
-import ProfileController from './profileController';
-const {getProfile} = require('../middleware/getProfile')
+import ProfileController from './profileController.js';
 
 
 const router = express.Router();

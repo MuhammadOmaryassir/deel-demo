@@ -1,4 +1,4 @@
-import ProfileService from "./profileSerrvice";
+import ProfileService from "./profileSerrvice.js";
 
 export default class ProfileController {
   static async depositMoney(req, res) {

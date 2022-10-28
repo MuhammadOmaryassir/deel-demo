@@ -1,4 +1,4 @@
-import JobModel from "./jobModel"
+import JobModel from "./jobModel.js"
 
 
 export default class JobService {

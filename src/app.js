@@ -1,11 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const {sequelize} = require('../config/sequellize')
-import '../utils/associations'
+import express from 'express';
+import bodyParser from 'body-parser'
+import sequelize from '../config/sequellize.js'
 
-import ContractRouter from './contracts';
-import JobRouter from './jobs'
-import ProfileRouter from './profiles';
+import ContractRouter from './contracts/index.js';
+import JobRouter from './jobs/index.js'
+import ProfileRouter from './profiles/index.js';
+import '../utils/associations.js'
 
 const app = express();
 
@@ -17,6 +17,14 @@ app.use('/', ContractRouter)
 app.use('/', JobRouter)
 app.use('/', ProfileRouter)
 
+try {
+    app.listen(3001, () => {
+      console.log('Express App Listening on Port 3001');
+    });
+  } catch (error) {
+    console.error(`An error occurred: ${JSON.stringify(error)}`);
+    process.exit(1);
+  }
 
 
-module.exports = app;
+// module.exports = app;

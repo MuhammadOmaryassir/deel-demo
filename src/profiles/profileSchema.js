@@ -1,5 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
-import db from '../../config/sequellize'
+import db from '../../config/sequellize.js'
 
 
  /**
@@ -13,11 +13,6 @@ class Profile extends Model {
   static init(sequelize, DataTypes) {
     super.init(
       {
-        profileId: {
-          type: DataTypes.INTEGER(11).UNSIGNED,
-          allowNull: false,
-          primaryKey: true,
-        },
         firstName: {
           type: Sequelize.STRING,
           allowNull: false

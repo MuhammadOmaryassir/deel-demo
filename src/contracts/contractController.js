@@ -1,4 +1,4 @@
-import ContractService from "./contractService"
+import ContractService from "./contractService.js"
 
 export default class ContractController {
   static async getContractById(req, res) {

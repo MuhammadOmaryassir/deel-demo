@@ -1,4 +1,4 @@
-import JobService from "./jobService";
+import JobService from "./jobService.js";
 
 export default class JobController {
   static async getUnpaidJobs(req, res) {

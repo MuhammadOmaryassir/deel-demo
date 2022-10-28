@@ -43,63 +43,11 @@ The exercise requires [Node.js](https://nodejs.org/en/) to be installed. We reco
 
   
 
-❗️ **Make sure you commit all changes to the master branch!**
-
-  
-  
-
-## Technical Notes
-
-  
-
-- The server is running with [nodemon](https://nodemon.io/) which will automatically restart for you when you modify and save a file.
-
-- The database provider is SQLite, which will store data in a file local to your repository called `database.sqlite3`. The ORM [Sequelize](http://docs.sequelizejs.com/) is on top of it. You should only have to interact with Sequelize - **please spend some time reading sequelize documentation before starting the exercise.**
-
-- To authenticate users use the `getProfile` middleware that is located under src/middleware/getProfile.js. users are authenticated by passing `profile_id` in the request header. after a user is authenticated his profile will be available under `req.profile`. make sure only users that are on the contract can access their contracts.
-- The server is running on port 3001.
-
-  
-
-## APIs To Implement 
-
-  
-
-Below is a list of the required API's for the application.
-
-  
-
-
-1. ***GET*** `/contracts/:id` - This API is broken 😵! it should return the contract only if it belongs to the profile calling. better fix that!
-
-1. ***GET*** `/contracts` - Returns a list of contracts belonging to a user (client or contractor), the list should only contain non terminated contracts.
-
-1. ***GET*** `/jobs/unpaid` -  Get all unpaid jobs for a user (***either*** a client or contractor), for ***active contracts only***.
-
-1. ***POST*** `/jobs/:job_id/pay` - Pay for a job, a client can only pay if his balance >= the amount to pay. The amount should be moved from the client's balance to the contractor balance.
-
-1. ***POST*** `/balances/deposit/:userId` - Deposits money into the the the balance of a client, a client can't deposit more than 25% his total of jobs to pay. (at the deposit moment)
-
-1. ***GET*** `/admin/best-profession?start=<date>&end=<date>` - Returns the profession that earned the most money (sum of jobs paid) for any contactor that worked in the query time range.
-
-1. ***GET*** `/admin/best-clients?start=<date>&end=<date>&limit=<integer>` - returns the clients the paid the most for jobs in the query time period. limit query parameter should be applied, default limit is 2.
-```
- [
-    {
-        "id": 1,
-        "fullName": "Reece Moyer",
-        "paid" : 100.3
-    },
-    {
-        "id": 200,
-        "fullName": "Debora Martin",
-        "paid" : 99
-    },
-    {
-        "id": 22,
-        "fullName": "Debora Martin",
-        "paid" : 21
-    }
-]
 ```
 
+Due to restriction of time I skipped several things, but I will mention them here:
+
+* setup validation with Joi
+* Better Error Handling
+* Unit Testing
+* Converting the Project into TypeScripts
